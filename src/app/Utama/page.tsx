@@ -1,9 +1,8 @@
-import Coba from "@/components/Coba";
-
+import Beranda from "@/components/Beranda";
 export default function Home() {
   return (
     <>
-      <Coba />
+      <Beranda />
     </>
   );
 }
