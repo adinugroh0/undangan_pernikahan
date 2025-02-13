@@ -4,9 +4,11 @@ import React from "react";
 import { ImagesSlider } from "@/components/ui/images-slider";
 import Image from "next/image";
 import Timer from "./Timer";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export function ImagesSliderDemo() {
+  const [isFlipped, setIsFlipped] = useState(false);
   const router = useRouter();
   const images = ["/1.jpg", "/2.jpg", "/3.jpg"];
   return (
@@ -253,6 +255,149 @@ export function ImagesSliderDemo() {
             </button>
           </motion.div>
         </motion.div>
+      </div>
+      {/* card */}
+      <div>
+        <div className="flex flex-col justify-center items-center w-full h-screen bg-[url(/lokasi.png)] bg-cover p-10 gap-10">
+          <Image
+            src="/titip.png"
+            alt="Background Image"
+            width={400}
+            height={400}
+            className="w-1/2 md:w-1/3"
+          />
+          {/* Outer Container with 3D Perspective */}
+          <div
+            className="relative w-[240px] h-[154px] [perspective:1000px] text-white cursor-pointer"
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}>
+            {/* Inner Card Wrapper that rotates */}
+            <div
+              className={`absolute w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                isFlipped ? "rotate-y-180" : ""
+              }`}>
+              {/* ---------------- FRONT SIDE ---------------- */}
+              <div
+                className="absolute w-full h-full bg-[#171717] shadow-lg rounded-xl
+                       flex flex-col justify-center items-center
+                       [backface-visibility:hidden]">
+                {/* Bank Name */}
+                <p className="absolute top-[10px] right-[10px] text-xs tracking-wide">
+                  BNI
+                </p>
+
+                {/* Logo */}
+                <div className="relative w-full h-full">
+                  <svg
+                    className="absolute top-[50px] right-[60px]"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="36"
+                    height="36"
+                    viewBox="0 0 48 48">
+                    <path
+                      fill="#ff9800"
+                      d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                    <path
+                      fill="#d50000"
+                      d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                    <path
+                      fill="#ff3d00"
+                      d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
+                  </svg>
+                </div>
+
+                {/* Chip */}
+                <div className="absolute top-[15px] left-[15px] w-8 h-5 bg-gray-400 rounded-md"></div>
+
+                {/* Contactless Icon */}
+                <div className="absolute top-[30px] right-[20px] text-base">
+                  📶
+                </div>
+
+                {/* Card Number */}
+                <p className="absolute font-bold text-sm bottom-[50px] left-[15px]">
+                  0827583389
+                </p>
+
+                {/* Expiration Date */}
+                <p className="absolute font-bold text-xs bottom-[30px] left-[60px]">
+                  12/24
+                </p>
+
+                {/* Name */}
+                <p className="absolute font-bold text-xs bottom-[10px] left-[15px]">
+                  DEDY SETIYAWAN
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              className="relative w-[240px] h-[154px] [perspective:1000px] text-white cursor-pointer"
+              onMouseEnter={() => setIsFlipped(true)}
+              onMouseLeave={() => setIsFlipped(false)}>
+              {/* Inner Card Wrapper that rotates */}
+              <div
+                className={`absolute w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
+                  isFlipped ? "rotate-y-180" : ""
+                }`}>
+                {/* ---------------- FRONT SIDE ---------------- */}
+                <div
+                  className="absolute w-full h-full bg-[#171717] shadow-lg rounded-xl
+                       flex flex-col justify-center items-center
+                       [backface-visibility:hidden]">
+                  {/* Bank Name */}
+                  <p className="absolute top-[10px] right-[10px] text-xs tracking-wide">
+                    DANA
+                  </p>
+
+                  {/* Logo */}
+                  <div className="relative w-full h-full">
+                    <svg
+                      className="absolute top-[50px] right-[60px]"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="36"
+                      height="36"
+                      viewBox="0 0 48 48">
+                      <path
+                        fill="#ff9800"
+                        d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
+                      <path
+                        fill="#d50000"
+                        d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
+                      <path
+                        fill="#ff3d00"
+                        d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
+                    </svg>
+                  </div>
+
+                  {/* Chip */}
+                  <div className="absolute top-[15px] left-[15px] w-8 h-5 bg-gray-400 rounded-md"></div>
+
+                  {/* Contactless Icon */}
+                  <div className="absolute top-[30px] right-[20px] text-base">
+                    📶
+                  </div>
+
+                  {/* Card Number */}
+                  <p className="absolute font-bold text-sm bottom-[50px] left-[15px]">
+                    087780234135
+                  </p>
+
+                  {/* Expiration Date */}
+                  <p className="absolute font-bold text-xs bottom-[30px] left-[60px]">
+                    12/24
+                  </p>
+
+                  {/* Name */}
+                  <p className="absolute font-bold text-xs bottom-[10px] left-[15px]">
+                    DEDY SETIYAWAN
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
