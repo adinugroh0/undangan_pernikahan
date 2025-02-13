@@ -6,6 +6,7 @@ import Image from "next/image";
 import Timer from "./Timer";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Musik from "./Musik";
 
 export function ImagesSliderDemo() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -13,6 +14,7 @@ export function ImagesSliderDemo() {
   const images = ["/1.jpg", "/2.jpg", "/3.jpg"];
   return (
     <>
+      <Musik />
       <ImagesSlider className="h-screen" images={images}>
         <motion.div
           initial={{
