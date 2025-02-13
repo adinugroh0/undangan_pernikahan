@@ -18,7 +18,7 @@ export function ImagesSliderDemo() {
       <ImagesSlider className="h-screen" images={images}>
         <motion.div
           initial={{
-            opacity: 0,
+            opacity: 1,
             y: -80,
           }}
           animate={{
